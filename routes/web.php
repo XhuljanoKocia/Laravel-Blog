@@ -35,6 +35,8 @@ use Illuminate\Support\Facades\Route;
 //     return "This url is " . $url;
 // }));
 
+// We should use the whole url or controller file
 // Route::get('/post/{id}', '\App\Http\Controllers\PostsController@index');
 
+// With resource we target the CRUD functions
 Route::resource('posts', '\App\Http\Controllers\PostsController');
