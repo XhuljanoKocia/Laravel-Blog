@@ -13,26 +13,28 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/about', function () {
-    return "Hi about page";
-});
+// Route::get('/about', function () {
+//     return "Hi about page";
+// });
 
-Route::get('/contact', function () {
-    return "Hi contact page";
-});
+// Route::get('/contact', function () {
+//     return "Hi contact page";
+// });
 
-Route::get('/post/{id}/{name}', function ($id, $name) {
-    return "This is post number " . $id . " " . $name;
-});
+// Route::get('/post/{id}/{name}', function ($id, $name) {
+//     return "This is post number " . $id . " " . $name;
+// });
 
-Route::get('/admin/posts/example', array('as' => 'admin.home', function () {
-    $url = route('admin.home');
+// Route::get('/admin/posts/example', array('as' => 'admin.home', function () {
+//     $url = route('admin.home');
 
-    return "This url is " . $url;
-}));
+//     return "This url is " . $url;
+// }));
 
-Route::get('/post/{id}', '\App\Http\Controllers\PostsController@index');
+// Route::get('/post/{id}', '\App\Http\Controllers\PostsController@index');
+
+Route::resource('posts', '\App\Http\Controllers\PostsController');
