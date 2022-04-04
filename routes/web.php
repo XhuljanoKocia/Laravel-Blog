@@ -34,3 +34,5 @@ Route::get('/admin/posts/example', array('as' => 'admin.home', function () {
 
     return "This url is " . $url;
 }));
+
+Route::get('/post', '\App\Http\Controllers\PostsController@index');
