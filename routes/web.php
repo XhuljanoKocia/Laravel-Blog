@@ -40,3 +40,5 @@ use Illuminate\Support\Facades\Route;
 
 // With resource we target the CRUD functions
 Route::resource('posts', '\App\Http\Controllers\PostsController');
+
+Route::get('contact', '\App\Http\Controllers\PostsController@contact');
