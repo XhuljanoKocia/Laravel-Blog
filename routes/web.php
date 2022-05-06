@@ -30,3 +30,9 @@ Route::get('/contact', function () {
 Route::get('/post/{id}/{name}', function ($id, $name) {
     return "This is post number " . $id . " " . $name;
 });
+
+// We can name routes to shorten their name if it is too long or complicated to type and we could save it into a variable
+Route::get('/admin/posts/example', array('as'=>'admin.home', function () {
+    $url = route('admin.home');
+    return "The url is " . $url;
+}));
