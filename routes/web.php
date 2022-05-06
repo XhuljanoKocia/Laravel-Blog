@@ -16,3 +16,17 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Creating simple routes like about or contact pages
+Route::get('/about', function () {
+    return "This is the about page.";
+});
+
+Route::get('/contact', function () {
+    return "This is the contact page.";
+});
+
+// We can pass parameters into the routes like for example a post id
+Route::get('/post/{id}/{name}', function ($id, $name) {
+    return "This is post number " . $id . " " . $name;
+});
