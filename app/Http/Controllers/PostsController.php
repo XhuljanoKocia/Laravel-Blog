@@ -85,4 +85,10 @@ class PostsController extends Controller
     public function contact(){
         return view('contact');
     }
+
+    public function showPost(){
+        // return view('post', compact('id'));
+        $id = 10;
+        return view('post', ['id'=>$id]);
+    }
 }
