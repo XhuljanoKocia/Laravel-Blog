@@ -96,9 +96,16 @@ use App\Models\Post;
 //     return $post->title;
 // });
 
-Route::get('/findwhere', function(){
-    // We query the posts table where the id is 3, take 1 from it and get it.
-    $posts = Post::where('id', 3)->orderBy('id', 'desc')->take(1)->get(); 
+// Route::get('/findwhere', function(){
+//     // We query the posts table where the id is 3, take 1 from it and get it.
+//     $posts = Post::where('id', 3)->orderBy('id', 'desc')->take(1)->get();
 
-    return $posts;
-});
+//     return $posts;
+// });
+
+// Route::get('/findmore', function(){
+//     // $posts = Post::findOrFail(3); // It searches for a post with a specific ID and shows data in JSON format if found or page 404 if no data with that ID
+//     $posts = Post::where('users_count', '<', 50)->firstOrFail(); // This translates into this query select * from `posts` where `users_count` < 50 limit 1, so the firstOrFail indicates the limit
+
+//     return $posts;
+// });
