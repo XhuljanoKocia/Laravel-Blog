@@ -82,16 +82,23 @@ use App\Models\Post;
 |--------------------------------------------------------------------------
 */
 
-Route::get('/read', function(){
-    $posts = Post::all();
+// Route::get('/read', function(){
+//     $posts = Post::all();
 
-    foreach($posts as $post){
-        return $post -> title;
-    }
-});
+//     foreach($posts as $post){
+//         return $post -> title;
+//     }
+// });
 
-Route::get('/find', function(){
-    $post = Post::find(2); // We get the id of our row from the database which in our case is number 2
+// Route::get('/find', function(){
+//     $post = Post::find(2); // We get the id of our row from the database which in our case is number 2
 
-    return $post->title;
+//     return $post->title;
+// });
+
+Route::get('/findwhere', function(){
+    // We query the posts table where the id is 3, take 1 from it and get it.
+    $posts = Post::where('id', 3)->orderBy('id', 'desc')->take(1)->get(); 
+
+    return $posts;
 });
