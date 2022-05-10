@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Post;
 
 /*
 |--------------------------------------------------------------------------
@@ -69,8 +70,28 @@ use Illuminate\Support\Facades\Route;
 //     return $updated;
 // });
 
-Route::get('/delete', function(){
-    $deleted = DB::delete('delete from posts where id = ?', [1]);
+// Route::get('/delete', function(){
+//     $deleted = DB::delete('delete from posts where id = ?', [1]);
 
-    return $deleted;
+//     return $deleted;
+// });
+
+/*
+|--------------------------------------------------------------------------
+| ELOQUENT
+|--------------------------------------------------------------------------
+*/
+
+Route::get('/read', function(){
+    $posts = Post::all();
+
+    foreach($posts as $post){
+        return $post -> title;
+    }
+});
+
+Route::get('/find', function(){
+    $post = Post::find(2); // We get the id of our row from the database which in our case is number 2
+
+    return $post->title;
 });
