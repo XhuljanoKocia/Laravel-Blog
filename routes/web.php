@@ -63,8 +63,14 @@ use Illuminate\Support\Facades\Route;
 //     }
 // });
 
-Route::get('/updated', function(){
-    $updated = DB::update('update posts set title = "Updated Title" where id = ?', [1]);
+// Route::get('/updated', function(){
+//     $updated = DB::update('update posts set title = "Updated Title" where id = ?', [1]);
 
-    return $updated;
+//     return $updated;
+// });
+
+Route::get('/delete', function(){
+    $deleted = DB::delete('delete from posts where id = ?', [1]);
+
+    return $deleted;
 });
