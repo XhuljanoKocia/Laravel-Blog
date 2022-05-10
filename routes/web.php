@@ -41,6 +41,10 @@ use Illuminate\Support\Facades\Route;
 
 // Route::resource('posts', '\App\Http\Controllers\PostsController');
 
-Route::get('/contact', '\App\Http\Controllers\PostsController@contact');
+// Route::get('/contact', '\App\Http\Controllers\PostsController@contact');
 
-Route::get('/post', '\App\Http\Controllers\PostsController@showPost');
+// Route::get('/post', '\App\Http\Controllers\PostsController@showPost');
+
+Route::get('/insert', function(){
+    DB::insert('insert into posts(title, content) values(?, ?)', ['PHP with Laravel', 'Laravel is a popular framework']);
+});
