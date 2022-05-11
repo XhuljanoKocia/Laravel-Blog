@@ -129,6 +129,11 @@ use App\Models\Post;
 //     $post->save(); // Saving our changes
 // });
 
-Route::get('/create', function(){
-    Post::create(['title'=>'The create method', 'content'=>'This is the new content for the create method']);
+// Route::get('/create', function(){
+//     Post::create(['title'=>'The create method', 'content'=>'This is the new content for the create method']);
+// });
+
+Route::get('/update', function(){
+    // This method updates the content on the database which has the ID 2
+    Post::where('id', 2)->update(['title'=>'New simple title', 'content'=>'New simple content']);
 });
