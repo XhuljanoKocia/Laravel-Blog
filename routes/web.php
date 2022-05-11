@@ -150,19 +150,23 @@ use App\Models\Post;
 // });
 
 // Route::get('/softdelete', function(){
-//     Post::find(11)->delete(); // We specify the ID of the row we want to delete and the deleted_at database column will be populated
+//     Post::find(12)->delete(); // We specify the ID of the row we want to delete and the deleted_at database column will be populated
 // });
 
-Route::get('/readsoftdelete', function(){
-    // $post = Post::find(12);
+// Route::get('/readsoftdelete', function(){
+//     // $post = Post::find(12);
 
-    // return $post;
+//     // return $post;
 
-    // $post = Post::withTrashed()->where('id', 12)->get(); // This method selects the deleted data from the database, it will show even the data that is not deleted as well
+//     // $post = Post::withTrashed()->where('id', 12)->get(); // This method selects the deleted data from the database, it will show even the data that is not deleted as well
 
-    // return $post;
+//     // return $post;
 
-    $post = Post::onlyTrashed()->get(); // This method selects only the trashed items
+//     $post = Post::onlyTrashed()->get(); // This method selects only the trashed items
 
-    return $post;
-});
+//     return $post;
+// });
+
+// Route::get('/restore', function(){
+//     Post::withTrashed()->restore(); // This method finds all the trashed items in the database
+// });
