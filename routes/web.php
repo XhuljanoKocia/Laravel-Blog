@@ -133,7 +133,18 @@ use App\Models\Post;
 //     Post::create(['title'=>'The create method', 'content'=>'This is the new content for the create method']);
 // });
 
-Route::get('/update', function(){
-    // This method updates the content on the database which has the ID 2
-    Post::where('id', 2)->update(['title'=>'New simple title', 'content'=>'New simple content']);
+// Route::get('/update', function(){
+//     // This method updates the content on the database which has the ID 2
+//     Post::where('id', 2)->update(['title'=>'New simple title', 'content'=>'New simple content']);
+// });
+
+// Route::get('/delete', function(){
+//     $post = Post::find(3); // We find an ID that we want to delete
+
+//     $post->delete(); // We delete the found ID
+// });
+
+Route::get('/delete2', function(){
+    Post::destroy(4); // If we know the ID we can simply destory that ID, if we put an array like [4, 5, 6] it will delete multiple data
+    // Post::where('is_admin', 0)->delete(); // This is another way of deleting with a condition
 });
