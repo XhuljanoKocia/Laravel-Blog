@@ -144,7 +144,11 @@ use App\Models\Post;
 //     $post->delete(); // We delete the found ID
 // });
 
-Route::get('/delete2', function(){
-    Post::destroy(4); // If we know the ID we can simply destory that ID, if we put an array like [4, 5, 6] it will delete multiple data
-    // Post::where('is_admin', 0)->delete(); // This is another way of deleting with a condition
+// Route::get('/delete2', function(){
+//     Post::destroy(4); // If we know the ID we can simply destory that ID, if we put an array like [4, 5, 6] it will delete multiple data
+//     // Post::where('is_admin', 0)->delete(); // This is another way of deleting with a condition
+// });
+
+Route::get('/softdelete', function(){
+    Post::find(12)->delete(); // We specify the ID of the row we want to delete and the deleted_at database column will be populated
 });
