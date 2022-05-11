@@ -170,3 +170,7 @@ use App\Models\Post;
 // Route::get('/restore', function(){
 //     Post::withTrashed()->restore(); // This method finds all the trashed items in the database
 // });
+
+Route::get('/forceddelete', function(){
+    Post::onlyTrashed()->where('id', 13)->forceDelete(); // This deletes the data completely, only the trashed ones
+});
