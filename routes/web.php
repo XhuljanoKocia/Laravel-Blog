@@ -110,21 +110,25 @@ use App\Models\Post;
 //     return $posts;
 // });
 
-Route::get('/basicinsert', function(){
-    $post = new Post; // We have to instantiate the Post class
+// Route::get('/basicinsert', function(){
+//     $post = new Post; // We have to instantiate the Post class
 
-    // This adds new data on the database, doesn't modify existing values
-    $post->title = 'New title for today'; // Accessing the title and giving it a value
-    $post->content = 'New content for the new title changed today'; // Accessing the content and giving it a value
+//     // This adds new data on the database, doesn't modify existing values
+//     $post->title = 'New title for today'; // Accessing the title and giving it a value
+//     $post->content = 'New content for the new title changed today'; // Accessing the content and giving it a value
 
-    $post->save(); // Saving our changes, this will not duplicate data if it already exists on the database
-});
+//     $post->save(); // Saving our changes, this will not duplicate data if it already exists on the database
+// });
 
-Route::get('/basicinsert', function(){
-    $post = Post::find(2); // We select the data that we want to change its content
+// Route::get('/basicinsert', function(){
+//     $post = Post::find(2); // We select the data that we want to change its content
 
-    $post->title = 'New PHP title'; // Accessing the title and giving it a new value
-    $post->content = 'New PHP content'; // Accessing the content and giving it a new value
+//     $post->title = 'New PHP title'; // Accessing the title and giving it a new value
+//     $post->content = 'New PHP content'; // Accessing the content and giving it a new value
 
-    $post->save(); // Saving our changes
+//     $post->save(); // Saving our changes
+// });
+
+Route::get('/create', function(){
+    Post::create(['title'=>'The create method', 'content'=>'This is the new content for the create method']);
 });
