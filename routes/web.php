@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\Post;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -171,6 +172,17 @@ use App\Models\Post;
 //     Post::withTrashed()->restore(); // This method finds all the trashed items in the database
 // });
 
-Route::get('/forceddelete', function(){
-    Post::onlyTrashed()->where('id', 13)->forceDelete(); // This deletes the data completely, only the trashed ones
+// Route::get('/forceddelete', function(){
+//     Post::onlyTrashed()->where('id', 13)->forceDelete(); // This deletes the data completely, only the trashed ones
+// });
+
+/*
+|--------------------------------------------------------------------------
+| ELOQUENT RELATIONSHIPS
+|--------------------------------------------------------------------------
+*/
+
+// One to one relationship
+Route::get('/user/{id}/post', function($id){
+    return User::find($id)->post; // We can access the users post like this even its title or content adding post->content/title;
 });
