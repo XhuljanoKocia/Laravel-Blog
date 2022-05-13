@@ -186,3 +186,7 @@ use App\Models\User;
 Route::get('/user/{id}/post', function($id){
     return User::find($id)->post; // We can access the users post like this even its title or content adding post->content/title;
 });
+
+Route::get('/post/{id}/user', function($id){
+    return Post::find($id)->user->name;
+});
