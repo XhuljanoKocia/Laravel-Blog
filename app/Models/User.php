@@ -45,4 +45,8 @@ class User extends Authenticatable
     public function post(){
         return $this->hasOne('App\Models\Post'); // This will go to the posts table and look for the user_id column
     }
+
+    public function posts(){
+        return $this->hasMany('App\Models\Post'); // Checking all the posts that this user with a specific ID has
+    }
 }
