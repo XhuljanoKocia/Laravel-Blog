@@ -49,4 +49,8 @@ class User extends Authenticatable
     public function posts(){
         return $this->hasMany('App\Models\Post'); // Checking all the posts that this user with a specific ID has
     }
+
+    public function roles(){
+        return $this->belongsToMany('App\Models\Role');
+    }
 }
