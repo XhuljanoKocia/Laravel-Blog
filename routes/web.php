@@ -201,10 +201,20 @@ use App\Models\User;
 // });
 
 // Many to many relationship
-Route::get('/user/{id}/role', function($id){
-    $user = User::find($id);
+// Route::get('/user/{id}/role', function($id){
+//     $user = User::find($id);
+
+//     foreach($user->roles as $role){
+//         return $role->name;
+//     }
+// });
+
+// Accessing the intermediate table / pivot
+
+Route::get('user/pivot', function(){
+    $user = User::find(1);
 
     foreach($user->roles as $role){
-        return $role->name;
+        echo $role->pivot->created_at;
     }
 });
