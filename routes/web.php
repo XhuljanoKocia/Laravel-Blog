@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Post;
 use App\Models\User;
 use App\Models\Country;
+use App\Models\Photo;
 
 /*
 |--------------------------------------------------------------------------
@@ -231,3 +232,11 @@ use App\Models\Country;
 // });
 
 // Polymorphic relation
+
+Route::get('user/photos', function(){
+    $user = User::find(1);
+
+    foreach($user->photos as $photo){
+        return $photo; // We can display different data for exmaple $photo->path will show the path
+    }
+});
