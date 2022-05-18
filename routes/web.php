@@ -222,10 +222,12 @@ use App\Models\Country;
 
 // Has many through relation
 
-Route::get('/user/country', function(){
-    $country = Country::find(1);
+// Route::get('/user/country', function(){
+//     $country = Country::find(1);
 
-    foreach($country->posts as $post){
-        return $post->title;
-    }
-});
+//     foreach($country->posts as $post){
+//         return $post->title;
+//     }
+// });
+
+// Polymorphic relation
