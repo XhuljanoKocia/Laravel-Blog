@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Models\Post;
 use App\Models\User;
+use App\Models\Country;
 
 /*
 |--------------------------------------------------------------------------
@@ -221,4 +222,10 @@ use App\Models\User;
 
 // Has many through relation
 
-Route::get('/user/country', function(){});
+Route::get('/user/country', function(){
+    $country = Country::find(1);
+
+    foreach($country->posts as $post){
+        return $post->title;
+    }
+});
