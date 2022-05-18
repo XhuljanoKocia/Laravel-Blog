@@ -233,10 +233,18 @@ use App\Models\Photo;
 
 // Polymorphic relation
 
-Route::get('user/photos', function(){
-    $user = User::find(1);
+// Route::get('user/photos', function(){
+//     $user = User::find(1);
 
-    foreach($user->photos as $photo){
-        return $photo; // We can display different data for exmaple $photo->path will show the path
-    }
+//     foreach($user->photos as $photo){
+//         return $photo; // We can display different data for exmaple $photo->path will show the path
+//     }
+// });
+
+// Polymorphic relation the inverse
+
+Route::get('photo/{id}/post', function($id){
+    $photo = Photo::findOrFail($id);
+
+    return $photo->imageable;
 });
