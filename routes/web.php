@@ -5,6 +5,9 @@ use App\Models\Post;
 use App\Models\User;
 use App\Models\Country;
 use App\Models\Photo;
+use App\Models\Tag;
+use App\Models\Video;
+use App\Models\Taggable;
 
 /*
 |--------------------------------------------------------------------------
@@ -251,10 +254,18 @@ use App\Models\Photo;
 
 // Polymorphic relation many to many
 
-Route::get('/post/tag', function(){
-    $post = Post::find(1);
+// Route::get('/post/tag', function(){
+//     $post = Post::find(1);
 
-    foreach($post->tags as $tag){
-        echo $tag->name;
+//     foreach($post->tags as $tag){
+//         echo $tag->name;
+//     }
+// });
+
+Route::get('/tag/post', function(){
+    $tag = Tag::find(2);
+
+    foreach($tag->posts as $post){
+        echo $post->title;
     }
 });
