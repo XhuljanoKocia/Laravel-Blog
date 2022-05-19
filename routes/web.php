@@ -250,3 +250,11 @@ use App\Models\Photo;
 // });
 
 // Polymorphic relation many to many
+
+Route::get('/post/tag', function(){
+    $post = Post::find(1);
+
+    foreach($post->tags as $tag){
+        echo $tag->name;
+    }
+});
